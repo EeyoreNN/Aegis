@@ -5,9 +5,7 @@ pub mod protocol;
 pub mod connection;
 pub mod peer;
 
-pub use protocol::{Message, MessageType, ProtocolVersion};
-pub use connection::{Connection, ConnectionError};
-pub use peer::{Peer, PeerManager};
+pub use connection::Connection;
 
 use thiserror::Error;
 

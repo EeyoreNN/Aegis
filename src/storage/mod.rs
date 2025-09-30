@@ -3,4 +3,3 @@
 
 pub mod ephemeral;
 
-pub use ephemeral::SecureBuffer;

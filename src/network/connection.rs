@@ -3,7 +3,7 @@
 
 use tokio::net::{TcpListener, TcpStream};
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
-use tokio_rustls::{TlsAcceptor, TlsConnector, TlsStream};
+use tokio_rustls::{TlsAcceptor, TlsConnector};
 use rustls::{ServerConfig, ClientConfig, RootCertStore};
 use rustls::pki_types::{CertificateDer, PrivateKeyDer, ServerName};
 use std::sync::Arc;
@@ -224,7 +224,7 @@ pub async fn connect_tls(addr: &str, server_name: &str) -> Result<Connection, Ne
     let peer_addr = stream.peer_addr()?;
 
     // Create TLS config (accepting self-signed certs for demo)
-    let mut root_store = RootCertStore::empty();
+    let root_store = RootCertStore::empty();
 
     let config = ClientConfig::builder()
         .dangerous()

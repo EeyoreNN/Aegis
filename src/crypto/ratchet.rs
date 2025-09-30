@@ -3,8 +3,7 @@
 
 use std::collections::HashMap;
 use std::time::{SystemTime, UNIX_EPOCH};
-use zeroize::{Zeroize, ZeroizeOnDrop};
-use serde::{Serialize, Deserialize};
+use zeroize::ZeroizeOnDrop;
 use thiserror::Error;
 
 use super::{

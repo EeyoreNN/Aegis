@@ -8,11 +8,7 @@ pub mod ratchet;
 pub mod random;
 pub mod timing;
 
-pub use kyber::{KeyPair, PublicKey, Ciphertext, SharedSecret};
-pub use symmetric::{encrypt, decrypt, EncryptedMessage};
-pub use kdf::derive_keys;
-pub use ratchet::{RatchetState, RatchetError};
-pub use random::secure_random_bytes;
+pub use ratchet::RatchetError;
 
 use thiserror::Error;
 

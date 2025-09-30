@@ -4,7 +4,7 @@
 use serde::{Serialize, Deserialize};
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use crate::crypto::{CryptoError, kyber::{PublicKey, Ciphertext as KyberCiphertext}};
+use crate::crypto::kyber::{PublicKey, Ciphertext as KyberCiphertext};
 use super::NetworkError;
 
 const CURRENT_PROTOCOL_VERSION: u8 = 1;

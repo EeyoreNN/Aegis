@@ -1,7 +1,7 @@
 // Cryptographically secure random number generation
 // Provides a safe wrapper around the system CSPRNG
 
-use rand::{RngCore, CryptoRng};
+use rand::RngCore;
 use rand::rngs::OsRng;
 use zeroize::Zeroize;
 

@@ -3,7 +3,7 @@
 
 use pqcrypto_kyber::kyber1024;
 use pqcrypto_traits::kem::{PublicKey as PQPublicKey, SecretKey as PQSecretKey, SharedSecret as PQSharedSecret, Ciphertext as PQCiphertext};
-use zeroize::{Zeroize, ZeroizeOnDrop};
+use zeroize::ZeroizeOnDrop;
 use serde::{Serialize, Deserialize};
 
 use super::CryptoError;

@@ -5,7 +5,6 @@ use hkdf::Hkdf;
 use sha2::Sha256;
 use blake3::Hasher as Blake3Hasher;
 use hmac::{Hmac, Mac};
-use zeroize::{Zeroize, ZeroizeOnDrop};
 
 use super::{CryptoError, symmetric::SymmetricKey};
 
