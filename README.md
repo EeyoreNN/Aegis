@@ -110,11 +110,7 @@ aegis/
 - macOS, Linux, or Windows
 - Rust toolchain (Rust 1.70+)
 
-You can install or update the Rust toolchain with the helper script:
-
-```bash
-./scripts/install_prereqs.sh
-```
+If you already have Rust installed, you can skip straight to building the project. Otherwise, after cloning run the helper script that lives in `scripts/` (shown in the next section).
 
 ### Build from Source
 
