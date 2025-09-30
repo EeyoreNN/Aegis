@@ -110,14 +110,19 @@ aegis/
 - macOS, Linux, or Windows
 - Rust toolchain (Rust 1.70+)
 
-If you already have Rust installed, you can skip straight to building the project. Otherwise, after cloning run the helper script that lives in `scripts/` (shown in the next section).
-
 ### Build from Source
 
 ```bash
 git clone https://github.com/EeyoreNN/Aegis.git
 cd aegis
 cargo build --release
+```
+
+### Install Rust
+
+If you don't have Rust yet, clone the repo first (next step) and then run the helper script that lives in `scripts/`:
+```bash
+./scripts/install_prereqs.sh
 ```
 
 The binary will be at `target/release/aegis`
