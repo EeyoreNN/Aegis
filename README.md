@@ -430,7 +430,7 @@ Contributions are welcome! Priority areas:
 
 ```bash
 # Setup
-git clone https://github.com/yourusername/aegis.git
+git clone https://github.com/EeyoreNN/Aegis.git
 cd aegis
 
 # Build
