@@ -84,12 +84,8 @@ async fn test_end_to_end_with_tls() {
     let _ = client_session.close().await;
 }
 
-// NOTE: This test is currently disabled due to a limitation in the ratchet implementation.
-// Sending multiple consecutive messages from one peer without alternating with the other peer
-// causes ratchet chain desynchronization. This will be fixed in a future update when we implement
-// proper message counter tracking and out-of-order message handling.
+// Verify we can send multiple consecutive messages without desynchronizing the ratchet.
 #[tokio::test]
-#[ignore]
 async fn test_multiple_messages_unidirectional() {
     let listener = Listener::bind("127.0.0.1:0").await.unwrap();
     let addr = listener.local_addr().unwrap();

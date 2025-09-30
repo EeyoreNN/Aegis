@@ -15,6 +15,7 @@ use super::{
 
 const ROTATION_INTERVAL_SECS: u64 = 60;
 const MAX_SKIP: usize = 1000; // Maximum skipped messages
+const CHAIN_ADVANCE_CONTEXT: &[u8] = b"chain-advance";
 
 #[derive(Error, Debug)]
 pub enum RatchetError {
@@ -106,7 +107,7 @@ impl RatchetState {
         let counter = self.send_counter;
 
         // Advance the chain
-        self.send_chain_key = derive_chain_key(&self.send_chain_key, b"send-advance")?;
+        self.send_chain_key = derive_chain_key(&self.send_chain_key, CHAIN_ADVANCE_CONTEXT)?;
         self.send_counter += 1;
 
         Ok((message_key, counter))
@@ -130,7 +131,7 @@ impl RatchetState {
             for i in self.recv_counter..message_counter {
                 let skipped_key = derive_message_key(&self.recv_chain_key, i)?;
                 self.skipped_message_keys.insert(i, skipped_key);
-                self.recv_chain_key = derive_chain_key(&self.recv_chain_key, b"recv-advance")?;
+                self.recv_chain_key = derive_chain_key(&self.recv_chain_key, CHAIN_ADVANCE_CONTEXT)?;
             }
 
             self.recv_counter = message_counter;
@@ -141,7 +142,7 @@ impl RatchetState {
 
         // Advance the chain if this is the next expected message
         if message_counter == self.recv_counter {
-            self.recv_chain_key = derive_chain_key(&self.recv_chain_key, b"recv-advance")?;
+            self.recv_chain_key = derive_chain_key(&self.recv_chain_key, CHAIN_ADVANCE_CONTEXT)?;
             self.recv_counter += 1;
         }
 
