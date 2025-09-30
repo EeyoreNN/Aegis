@@ -107,13 +107,19 @@ aegis/
 
 ### Prerequisites
 
-- Rust 1.70 or later
 - macOS, Linux, or Windows
+- Rust toolchain (Rust 1.70+)
+
+You can install or update the Rust toolchain with the helper script:
+
+```bash
+./scripts/install_prereqs.sh
+```
 
 ### Build from Source
 
 ```bash
-git clone https://github.com/yourusername/aegis.git
+git clone https://github.com/EeyoreNN/Aegis.git
 cd aegis
 cargo build --release
 ```
